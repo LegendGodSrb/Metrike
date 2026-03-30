@@ -1,0 +1,15 @@
+import static org.junit.Assert.assertEquals;
+import org.junit.Test;
+
+public class CalculatorTest {
+
+    @Test
+    public void testCalculateSimpleExpression() {
+        Calculator calc = new Calculator();
+
+        // Testiramo prioritet operacija: 2 + 3 * 4 bi trebalo da bude 14, a ne 20
+        double result = calc.Calculate("2+3*4");
+
+        assertEquals("Prioritet operacija nije ispravan", 14.0, result, 0.001);
+    }
+}
